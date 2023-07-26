@@ -1,0 +1,41 @@
+// ---------------------------------------------------------
+// Components - BUTTONS
+// ---------------------------------------------------------
+
+@use "../global" as *;
+
+.grp-compteur {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: rem(16);
+
+    @include breakpoint("tablet") {
+        flex-direction: row;
+        gap: rem(32);
+    }
+
+  .compteur {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: rem(8);
+    width: fit-content;
+
+    span {
+      font-size: rem(24);
+      font-weight: 600;
+      background: linear-gradient(
+        98.02deg,
+        #81f586 0%,
+        #79e4e4 50%,
+        #9085fd 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+    }
+  }
+}

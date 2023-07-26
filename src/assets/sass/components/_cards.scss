@@ -1,0 +1,87 @@
+// ---------------------------------------------------------
+// Components - CARDS
+// ---------------------------------------------------------
+
+@use '../global' as *;
+
+.cards{
+    max-width: rem(394);
+
+    &__img{
+       width: rem(394);
+        transition: all 0.3s ease-in-out;
+        &:hover{
+            transform: scale(1.1);
+        }
+        &:not(:hover){
+            // assombrir l'image
+            // filter: grayscale(10%);
+            filter: contrast(0.7) brightness(0.8) saturate(0.95);
+
+        }
+
+    }
+}
+
+.card_apple{
+    max-width: rem(300);
+    background: white;
+    border-radius: rem(16);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+
+    &:hover{
+        transform: scale(1.1);
+    }
+
+    .top_card{
+        display: flex;
+        background-color: #6C9BF9;
+        padding: rem(14) rem(16);
+        gap: rem(24);
+
+        &__point{
+            display: flex;
+            align-items: center;
+            gap: rem(6);
+
+            span{
+                width: rem(12);
+                height: rem(12);
+                border-radius: 50%;
+
+                &.red{
+                    background-color: #FF5C5C;
+                }
+                &.yellow{
+                    background-color: #FFC05C;
+                }
+                &.green{
+                    background-color: #5CFF5C;
+                }
+            }
+        }
+
+        &__title{
+            font-size: rem(12);
+            color: black;
+            background-color: color(btow, 100);
+            padding: rem(4) rem(16) rem(4) rem(8);
+            border-radius: rem(8);
+            min-width: rem(150);
+        }
+    }
+
+    .bottom_card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: rem(16);
+        padding: rem(32) rem(16);
+        color: black;
+
+        &__img{
+            max-width: 100%;
+        }
+        };
+    }

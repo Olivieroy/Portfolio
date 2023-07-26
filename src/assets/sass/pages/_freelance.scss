@@ -1,0 +1,65 @@
+// ---------------------------------------------------------
+// Pages
+// ---------------------------------------------------------
+
+@use "../global" as *;
+
+#freelance {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(64);
+
+    @include breakpoint("tablet") {
+      gap: rem(96);
+    }
+
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include breakpoint("tablet") {
+      flex-direction: row;
+      justify-content: space-around;
+      gap: 0;
+    }
+  }
+
+    .container-2 {
+      max-width: rem(1200);
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: rem(24);
+
+    @include breakpoint("tablet") {
+      flex-direction: row;
+      justify-content: space-around;
+      gap: 0;
+    }
+
+    .listing{
+        display: flex;
+        flex-direction: column;
+        gap: rem(16);
+        font-weight: 600;
+    }
+  }
+
+  .section__txt {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: rem(24);
+      text-align: center;
+      max-width: rem(660);
+
+      @include breakpoint("tablet") {
+        text-align: left;
+        align-items: flex-start;
+      }
+    }
+}

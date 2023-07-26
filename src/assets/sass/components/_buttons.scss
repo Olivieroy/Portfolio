@@ -1,0 +1,152 @@
+// ---------------------------------------------------------
+// Components - BUTTONS
+// ---------------------------------------------------------
+
+@use '../global' as *;
+
+.btn{
+    padding:  rem(16) rem(20);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem(8);
+    width: fit-content;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: rem(50);
+    font-size: rem(16);
+    font-weight: 600;
+    background: transparent;
+
+    &.filled{
+        padding:rem(19) rem(23);
+
+        &.primary{
+            background-color: color(primary, base);
+            color: color(btow, 1000);
+            border: none;
+
+            // box-shadow: 0 rem(2) rem(4) rgba(0, 0, 0, 0.25);
+            &:hover, &:focus{
+outline : none;
+                background-color: color(primary, dark);
+            }
+        }
+
+        &.secondary{
+            background-color: color(secondary, base);
+            color: color(btow, 0);
+            border: none;
+            &:hover, &:focus{
+outline : none;
+                background-color: color(secondary, 900);
+            }
+        }
+
+        &.gradient{
+            background: linear-gradient(98.02deg, color(primary, base) 0%, color(secondary, base) 100%);
+            color: color(btow, 1000);
+            border: none;
+            &:hover, &:focus{
+outline : none;
+                background: linear-gradient(98.02deg, color(secondary, base) 0%, color(secondary, base) 100%);
+                color: color(btow, 100);
+            }
+        }
+    }
+
+
+    
+    &.outlined{
+
+        &.primary{
+            color: color(primary, base);
+            border: 3px solid color(primary, base);
+            &:hover, &:focus{
+outline : none;
+                background-color: color(primary, base);
+                color: color(btow, 1000);
+            }
+        }
+
+
+        &.secondary{
+            border: rem(3) solid color(secondary, base);
+            color: color(secondary, base);
+
+            &:hover, &:focus{
+outline : none;
+                background: color(secondary, base);
+                color : color(btow, 0);
+            }
+        }
+
+    }
+
+    &.link{
+        text-decoration: none;
+        
+        &.primary{
+            color: color(primary, base);
+            &:hover, &:focus{
+outline : none;
+                color: color(primary, 900);
+                text-decoration: underline;
+            }
+        }
+
+        &.secondary{
+            color: color(secondary, base);
+            &:hover, &:focus{
+outline : none;
+                color: color(secondary, 900);
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.filter-btn{
+    border: 2px solid color(primary, base);
+    color: color(primary, base);
+    background-color: transparent;
+    padding: rem(4) rem(8);
+    border-radius: 50px;
+    transition: all .2s ease-in-out;
+    min-width: rem(70);
+
+    &:hover, &:focus{
+outline : none;
+        background-color: color(primary, base);
+        color: color(btow, 1000);
+    }
+
+    &.active{
+        background-color: color(secondary, base);
+        border-color: color(secondary, base);
+        color: color(btow, 1000);
+    }
+}
+
+.sub-filter-btn{
+    border: 2px solid color(accent, base);
+    color: color(accent, base);
+    background-color: transparent;
+    padding: rem(4) rem(8);
+    border-radius: 50px;
+    transition: all .2s ease-in-out;
+    min-width: rem(70);
+
+    &:hover, &:focus{
+outline : none;
+        background-color: color(accent, base);
+        color: color(btow, 1000);
+    }
+
+    &.active{
+        background-color: color(primary, base);
+        border-color: color(primary, base);
+        color: color(btow, 1000);
+    }
+}

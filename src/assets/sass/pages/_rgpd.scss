@@ -1,0 +1,40 @@
+// ---------------------------------------------------------
+// Pages
+// ---------------------------------------------------------
+
+@use "../global" as *;
+
+.mentions-legales{
+    max-width: rem(1200);
+    margin: 0 auto;
+    padding: rem(24) rem(32);
+    margin-top: rem(64);
+
+    @include breakpoint(tablet) {
+        margin-top: rem(128);
+    }
+
+    h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+h3 {
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+a{
+    color: color(btow, 100);
+}
+
+}

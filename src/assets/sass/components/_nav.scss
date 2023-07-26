@@ -1,0 +1,89 @@
+// ---------------------------------------------------------
+// Components - BUTTONS
+// ---------------------------------------------------------
+
+@use '../global' as *;
+
+.nav{
+    display: none;
+    @include breakpoint ('tablet'){
+        display: flex;
+    ul{
+        display: flex;
+        gap: rem(32);
+        list-style: none;
+
+        a{
+            font-size: rem(16);
+            font-weight: 700;
+            color: color(btow, 800);
+            text-decoration: none;
+            transition: color .3s ease;
+            
+
+            &::after{
+                content: '';
+                display: block;
+                margin: 0 auto;
+                width: 0;
+                height: rem(2);
+                background-color: color(btow, 100);
+                transition: width .5s ease-in-out;
+            }
+
+            &:hover, &:focus{
+                outline: none;
+                color: color(primary, dark);
+                &::after{
+                    width: 100%;
+                    background: color(primary, dark);
+                }
+            }
+        }
+    }
+    }
+}
+
+.navresp {
+     background: 
+        color(background, dark);
+        
+    display: block;
+    position: fixed;
+    z-index: 50;
+    right: rem(-7000);
+    top: 0;
+    height: 100vh;
+    
+    font-size: rem(16);
+    font-weight: 700;
+    color: color(btow, 100);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 100%;
+    @include breakpoint("tablet") {
+      display: none;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: rem(64);
+      list-style: none;
+      height: 100%;
+      padding: rem(128) rem(32);
+      background: url('../img/background-eco.webp');
+      background-position: center;
+    background-size: cover;
+      a {
+        color: color(btow, 800);
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .navresp.open {
+    right: 0;
+  }

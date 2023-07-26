@@ -1,0 +1,175 @@
+// ---------------------------------------------------------
+// Pages
+// ---------------------------------------------------------
+
+@use "../global" as *;
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: rem(8);
+  
+
+  @include breakpoint(tablet){
+  padding: rem(20) rem(64);
+  }
+  p {
+    font-size: rem(16);
+    font-weight: 600;
+    // line-height: rem(39);
+    max-width: rem(735);
+    text-align: center;
+
+    @include breakpoint("tablet") {
+      font-size: rem(16);
+    }
+  }
+
+  // Mettre le span derrière le h1
+  &__div {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(8);
+
+    @include breakpoint("tablet") {
+      flex-direction: row;
+      gap: rem(16);
+    }
+
+    &__h1 {
+      font-size: rem(50);
+      max-width: rem(1100);
+      font-weight: 700;
+      font-family: "Heebo";
+      text-align: center;
+      // background: linear-gradient(98deg, color(accent, base) 0%, color(primary, base) 33.33%, color(secondary, base) 66.66%, color(accent, base) 100%);
+      background: linear-gradient(
+        98.02deg,
+        #81f586 0%,
+        #79e4e4 25.4%,
+        #9085fd 50.64%,
+        #79e4e4 74.2%,
+        #81f586 100%
+      );
+      // -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 800% 800%;
+      animation: gradient 15s ease infinite;
+
+      @include breakpoint("tablet") {
+        font-size: rem(48);
+      }
+    }
+  }
+}
+
+.contact__form{
+    max-width: rem(735);
+    width: 100%;
+
+    form{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: rem(16);
+
+        .grp__input{
+            display: flex;
+            flex-direction: column;
+            gap: rem(8);
+            width: 100%;
+
+            label{
+                font-size: rem(16);
+                font-weight: 600;
+                // line-height: rem(39);
+                text-align: left;
+            }
+
+            input{
+                width: 100%;
+                height: rem(48);
+                border: 2px solid color(primary, base);
+                border-radius: rem(32);
+                padding: rem(16);
+                font-size: rem(16);
+                font-weight: 500;
+                line-height: rem(39);
+                background-color: color(background, base);
+                transition: all 0.3s ease;
+                color: color(btow, 0);
+
+                &:focus{
+                    outline: none;
+                    border: 3px solid color(secondary, base);
+                }
+            }
+            textarea{
+                border: 2px solid color(primary, base);
+                border-radius: rem(32);
+                padding:  rem(8) rem(16);
+                font-size: rem(16);
+                font-weight: 500;
+                line-height: rem(39);
+                background-color: color(background, base);
+                transition: all 0.3s ease;
+                color: color(btow, 0);
+
+                &:focus{
+                    outline: none;
+                    border: 3px solid color(secondary, base);
+                }
+            }
+        }
+
+        .grp__form{
+            display: flex;
+            flex-direction: column;
+            gap: rem(16);
+            width: 100%;
+
+            @include breakpoint("tablet") {
+                flex-direction: row;
+                gap: rem(16);
+            }
+        }
+    }
+}
+
+#successMessage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(16);
+    color: color(accent, base);
+    font-size: rem(16);
+    font-weight: 600;
+    // line-height: rem(39);
+    max-width: rem(735);
+    text-align: center;
+    margin-top: rem(16);
+    margin-bottom: rem(16);
+}
+
+#errorMessage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(16);
+    color: #d91d16;
+    font-size: rem(16);
+    font-weight: 600;
+    // line-height: rem(39);
+    max-width: rem(735);
+    text-align: center;
+    margin-top: rem(16);
+    margin-bottom: rem(16);
+}
