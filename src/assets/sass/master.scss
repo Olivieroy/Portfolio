@@ -7,6 +7,10 @@
 
 @use 'global' as *;
 
+html{
+    scroll-behavior: smooth;
+
+}
 
 .material-icons-round{
     user-select: none;

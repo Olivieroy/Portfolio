@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import './assets/sass/master.scss'
 import Header from './layouts/header'
-import Title from './parts/Title'
-import ChromTest from './layouts/chromatest'
+import Home from './pages/Home'
 
 function App() {
 
@@ -10,8 +9,7 @@ function App() {
     <>
       <div>
         <Header />
-        <Title />
-        <ChromTest />
+        <Home />
       </div>
     </>
   );

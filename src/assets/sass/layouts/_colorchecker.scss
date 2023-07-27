@@ -151,6 +151,17 @@
         width: 50%;
         text-align: center;
         z-index: 4;
+        transition: all 0.25s ease-in-out;
+
+        &.apca-element {
+          font-size: rem(14);
+          font-weight: 500;
+        }
+
+        &.aa-element {
+          font-size: rem(16);
+          font-weight: 600;
+        }
       }
     }
 
@@ -161,5 +172,15 @@
 
   &.apca-checked .apca-pills::before {
     left: 49%;
+  }
+
+  &.apca-checked .apca-pills label.aa-element{
+    font-size: rem(14);
+    font-weight: 500;
+  } 
+
+  &.apca-checked .apca-pills label.apca-element{
+    font-size: rem(16);
+    font-weight: 600;
   }
 }
