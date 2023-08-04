@@ -1,0 +1,186 @@
+@use "../global" as *;
+
+.checkcontrast {
+  max-width: rem(350);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: rem(8);
+  padding: rem(12) rem(16);
+  border-radius: rem(8);
+  background-image: url(../../img/colorcheck.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.15), 0px 23px 50px 0px rgba(0, 0, 0, 0.15), 0px 91px 91px 0px rgba(0, 0, 0, 0.13), 0px 204px 122px 0px rgba(0, 0, 0, 0.08), 0px 362px 145px 0px rgba(0, 0, 0, 0.02), 0px 566px 158px 0px rgba(0, 0, 0, 0.00);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 2px solid rgba(220, 220, 220, 0.519);
+
+  &-text {
+    font-size: rem(32);
+    font-weight: 600;
+    padding: rem(8) rem(16);
+    border-radius: rem(8);
+    text-align: center;
+  }
+
+  &-info {
+    display: flex;
+    align-items: center;
+    gap: rem(4);
+    transition: all 0.7s ease-in-out;
+    .result {
+      font-size: rem(16);
+      font-weight: 800;
+      transition: all 0.7s ease-in-out;
+
+      &.pass {
+        color: color(accent, dark);
+      }
+
+      &.fail {
+        color: rgb(189, 12, 12);
+      }
+    }
+
+    .material-icons-round {
+      font-size: rem(18);
+      transition: all 0.7s ease-in-out;
+    }
+
+    .text-awesome {
+      color: goldenrod;
+      font-size: rem(22);
+    }
+
+    .text-success {
+      color: color(accent, dark);
+    }
+
+    .text-fail {
+      color: rgb(189, 12, 12);
+    }
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem(32);
+    &-input {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: rem(8);
+
+      label {
+        font-size: rem(16);
+        font-weight: 600;
+
+        &:first-of-type{
+            font-size: rem(12);
+            font-weight: 400;
+        }
+      }
+    }
+  }
+  input[type="color"] {
+    width: rem(48);
+    height: rem(48);
+    padding: rem(8);
+    border-radius: rem(32) rem(8) rem(32) rem(32);
+    border: 2px solid color(btow, 900);
+    outline: none;
+    cursor: pointer;
+    transition: scale 0.25s ease-in-out, outline 0.25s ease-in-out;
+
+    &::-webkit-color-swatch-wrapper {
+      padding: 0;
+    }
+
+    &::-webkit-color-swatch {
+      border: none;
+    }
+
+    &:hover {
+      border: 2px solid color(primary, dark);
+      scale: 1.1;
+    }
+  }
+
+  .apca {
+    &-pills {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: rem(200);
+      padding: rem(6) 0;
+      border-radius: rem(20);
+      background: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.44);
+      font-size: rem(14);
+      font-weight: 500;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 1%;
+        transform: translateY(-50%);
+        width: 50%;
+        height: 85%;
+        border-radius: rem(20);
+        background: rgba(255, 255, 255, 0.272);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(7.4px);
+        -webkit-backdrop-filter: blur(7.4px);
+        border: 1px solid rgba(255, 255, 255, 0.44);
+
+        transition: all 0.25s ease-in-out;
+      }
+
+      label {
+        cursor: pointer;
+        width: 50%;
+        text-align: center;
+        z-index: 4;
+        // transition: all 0.25s ease-in-out;
+
+        &.apca-element {
+          font-size: rem(14);
+          font-weight: 500;
+        }
+
+        &.aa-element {
+          font-size: rem(16);
+          font-weight: 600;
+        }
+      }
+    }
+
+    &-switch {
+      display: none;
+    }
+  }
+
+  &.apca-checked .apca-pills::before {
+    left: 49%;
+  }
+
+  &.apca-checked .apca-pills label.aa-element{
+    font-size: rem(14);
+    font-weight: 500;
+  } 
+
+  &.apca-checked .apca-pills label.apca-element{
+    font-size: rem(16);
+    font-weight: 600;
+  }
+}

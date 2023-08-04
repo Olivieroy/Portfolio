@@ -1,0 +1,99 @@
+@use "../../global" as *;
+
+#Accessibility {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(24);
+  padding: rem(0) rem(24);
+  position: relative;
+
+  @include breakpoint("tablet") {
+    width: 100%;
+    flex-direction: row;
+    gap: rem(48);
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .zone-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: rem(16);
+
+    @include breakpoint("tablet") {
+      width: 50%;
+    }
+
+    &-ul {
+      counter-reset: custom-counter;
+      list-style-type: none;
+      margin-inline-end: 0px;
+      display: flex;
+      flex-direction: column;
+      gap: rem(16);
+
+      @include breakpoint("tablet") {
+          padding-inline-start: rem(32);
+       .btn{
+            width: fit-content;
+          }
+      }
+      &-li {
+        position: relative;
+        font-size: rem(16);
+        font-weight: 500;
+        line-height: 150%;
+        text-align: left;
+        max-width: rem(800);
+        text-align: center;
+
+        h3 {
+          font-size: rem(24);
+          font-weight: 600;
+          line-height: 150%;
+          text-align: center;
+        }
+
+        @include breakpoint("tablet") {
+            text-align: left;
+          &::before {
+            content: counter(
+              custom-counter
+            ); /* Utilisez le compteur pour afficher le chiffre */
+            counter-increment: custom-counter; /* Incrémentez le compteur */
+            position: absolute;
+            left: -2rem;
+            top: 15%;
+            transform: translateY(-50%);
+            width: 1.5rem;
+            height: 1.5rem;
+            background: linear-gradient(
+              -45deg,
+              color(primary, dark) 0%,
+              color(secondary, base) 100%
+            );
+            color: white;
+            text-align: center;
+            line-height: 1.5rem;
+            font-weight: bold;
+            font-size: 1rem;
+            border-radius: 4px;
+          }
+
+          h3 {
+            text-align: left;
+          }
+
+          
+        }
+      }
+    }
+  }
+
+  .checkcontrast{
+    position: sticky;
+    top: 8rem;
+  }
+}

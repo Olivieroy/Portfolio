@@ -26,9 +26,7 @@ const Counter = ({ targetNumber }) => {
   }, [count, targetNumber, increment]);
 
   return (
-    <div>
       <span>{Math.round(count)}</span>
-    </div>
   );
 };
 

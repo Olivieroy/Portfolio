@@ -1,5 +1,5 @@
 import React from "react";
-import '../assets/sass/components/_nav.scss'
+import '../assets/sass/components/nav.scss'
 
 const Nav = () => {
     return (
@@ -8,7 +8,7 @@ const Nav = () => {
                 <ul>
                     <li><a href="/">Accueil</a></li>
                     <li><a href="#A-propos">À propos</a></li>
-                    <li><a href="/works">Projets</a></li>
+                    <li><a href="#Projets">Projets</a></li>
                     <li><a href="/contact">Contact</a></li>
                 </ul>
             </div>

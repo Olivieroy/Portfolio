@@ -1,0 +1,217 @@
+@use "../global" as *;
+
+$title-bubble-width: 20%;
+$title-bubble-height: 35vh;
+$title-container-height: 88vh;
+
+.title-container {
+  position: relative;
+  width: 100%;
+  height: $title-container-height;
+  overflow: hidden;
+
+
+
+  .title-bubble {
+    width: $title-bubble-width;
+    height: $title-bubble-height;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: color(secondary, base);
+    z-index: 2;
+    transition: all 1s ease-in-out;
+    filter: blur(3rem);
+    opacity: 0.5;
+    animation: bubble-move 30s infinite;
+  }
+
+  .title-bubble-two {
+    width: $title-bubble-width;
+    height: $title-bubble-height;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: color(secondary, base);
+    z-index: 2;
+    transition: all 1s ease-in-out;
+    filter: blur(3rem);
+    opacity: 0.5;
+    animation: bubble-move2 45s infinite;
+  }
+
+  .title-mouse-bubble {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 25%;
+//   background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  filter: blur(3rem);
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  animation: bubble-mouse-color 25s ease infinite;
+}
+
+.title-mouse-bubble.active {
+  opacity: 0.5;
+}
+
+.title-icon{
+      z-index: 15;
+    font-size: rem(48);
+    transition: all 0.3s ease;
+    user-select: none;
+
+    @include breakpoint("tablet") {
+      font-size: rem(96);
+    }
+  &#first-icon{
+    position: absolute;
+    top: 34%;
+    left: 22%;
+    transform: translate(-50%, -50%);           
+
+    @include breakpoint("tablet") {
+      top: 26%;
+    left: 16%;
+    }
+
+    @include breakpoint("desktop") {
+      top: 31%;
+    left: 26%;
+    }
+  }
+
+  &#second-icon{
+    position: absolute;
+    top: 82%;
+    left: 78%;
+    transform: translate(-50%, -50%);           
+
+    @include breakpoint("tablet") {
+      top: 82%;
+    left: 84%;
+    }
+
+    @include breakpoint("desktop") {
+      top: 69%;
+    left: 74%;
+    }
+  }
+}
+
+  .title-element {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-top: rem(64);
+    background-image: url(../../img/background.png);
+    
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: rem(8);
+    color: color(btow, 800);
+
+    @include breakpoint ("tablet"){
+        gap: rem(12);
+    } 
+
+    &-name {
+      font-size: rem(24);
+      font-weight: 600;
+      line-height: rem(39);
+      position: relative;
+
+      &:first-of-type {
+        &::before{
+          content: '👋';
+          position: absolute;
+          // left: rem(-86);
+          left: calc(-5vw * 3.5);
+          top: rem(-32);
+          font-size: calc(5vh * 1.5);
+
+          @include breakpoint("tablet") {
+            font-size: calc(5vh * 2);
+          }
+        }
+      }
+
+      &:last-of-type {
+        &::after{
+          content: '🚀';
+          position: absolute;
+          // right: rem(-86);
+          right: calc(2vw * 3.5);
+          bottom: calc(-5vh * 1.5);
+          font-size: calc(5vh * 1.5);
+
+          @include breakpoint("tablet") {
+            font-size: calc(5vh * 2);
+            right: calc(-2vw * 3.5);
+          }
+        }
+      }
+
+      @include breakpoint("tablet") {
+        font-size: rem(32);
+      }
+    }
+
+      .title-h1 {
+        font-size: clamp(5vw, rem(55), 9999px);
+        position: relative;
+        max-width: 90%;
+        font-weight: 700;
+        font-family: "Heebo";
+        text-align: center;
+        background: linear-gradient(
+          98.02deg,
+          color(accent, dark) 0%,
+          color(primary, dark) 25.4%,
+          color(secondary, dark) 50.64%,
+          color(primary, dark) 74.2%,
+          color(accent, dark) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 300% 300%;
+        animation: gradient 10s ease infinite;
+        line-height: 110%;
+
+
+
+        @include breakpoint("tablet") {
+          font-size: clamp(5vw, 124px, 9999px);
+          max-width: calc(rem(1200) * 0.9);
+        }
+
+        @keyframes gradient {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+
+      }
+      
+    }
+  }

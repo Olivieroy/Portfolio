@@ -1,17 +1,23 @@
 import React from "react";
-import Title from "../../components/TitlePart";
+import "../../assets/sass/parts/home/about.scss";
+import CV from "../../assets/pdf/CV-Olivier-Roy.pdf";
+import Title from "../../components/Title";
 import Counter from "../../components/Counter";
+import Button from "../../components/Button-CTA";
 
 const About = () => {
+
+  const AnneeWork = new Date().getFullYear() - 2020;
+
     return (
       <section id="A-propos">
-        <Title Title_text="À propos de moi" Color="black" />
+        <Title Text="À propos de moi" Color="primary" />
         <p>
           Je suis Olivier Roy, un passionné du développement Front-End web,
-          spécialisé dans le Webdesign et l'intégration depuis plus de 3 ans.
-          Mon expertise consiste à donner vie et dynamisme à une grande variété
-          de projets web, tout en accordant une attention particulière à leur
-          accessibilité visuelle.
+          spécialisé dans le Webdesign et l'intégration depuis plus de{" "}
+          <Counter targetNumber={AnneeWork}></Counter> ans. Mon expertise consiste à
+          donner vie et dynamisme à une grande variété de projets web, tout en
+          accordant une attention particulière à leur accessibilité visuelle.
         </p>
         <p>
           L'accessibilité web est au cœur de ma pratique. Mon objectif est de
@@ -37,6 +43,19 @@ const About = () => {
           créer des solutions web harmonieuses qui allient esthétisme,
           fonctionnalité et accessibilité.
         </p>
+
+        <div className="grp-btn">
+          <Button
+            Text="Voir mon profil LinkedIn"
+            Link="https://www.linkedin.com/in/olivier-roy-dev-front/" Target="_blank" Color="primary" Type="outlined"></Button>
+          <Button
+            Text="Télécharger mon CV"
+            Link={CV}
+            Target="_blank" Color="secondary" Type="outlined"></Button>
+          <Button
+            Text='Me contacter'
+          Link='#Contact' Color='accent' Type='outlined'></Button>
+        </div>
       </section>
     );
 }

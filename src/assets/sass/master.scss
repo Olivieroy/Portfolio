@@ -12,6 +12,15 @@ html{
 
 }
 
+body{
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
 .material-icons-round{
     user-select: none;
+}
+
+section{
+    max-width: rem(1200);
 }
