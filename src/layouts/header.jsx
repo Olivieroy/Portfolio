@@ -12,8 +12,7 @@ const Header = () => {
 
     if (scrollPosition === 0) {
       header.classList.remove("header-scroll");
-      // si on survole le header alors on ajoute la classe active a la classe title-mouse-bubble
-      header.addEventListener("mouseenter", titleMouseBubble.classList.add("active"));
+
 
     } else {
       header.classList.add("header-scroll");

@@ -1,30 +1,28 @@
 @use '../../global' as *;
 
-#Projets{
+#Contact{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: rem(24);
-    max-width: rem(1200);
-    width: 100%;
-    padding: 0rem 1.5rem;
+    text-align: center;
+    line-height: 150%;
 
-    .grp-projects{
+    .contact-buttons{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: rem(16);
-        width: 100%;
 
         @include breakpoint('tablet'){
             flex-direction: row;
         }
     }
 
-
-    @include breakpoint ('tablet') {
-        align-items: flex-start;
+    p{
+        max-width: rem(800);
+        width: 100%;
     }
 }

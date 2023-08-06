@@ -1,21 +1,44 @@
 @use '../global' as *;
 
 /* Ajoutez ceci à votre fichier Projects.scss */
-.modal {
+.modal-overlay {
   position: fixed;
   top: 50%;
   left: 50%;
+  height: 100vh;
+  width: 100vw;
   transform: translate(-50%, -50%);
   background-color: white;
-  padding: 20px;
+  padding: rem(124) rem(24);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 9999;
+  z-index: 999;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  overflow: scroll;
+
+  @include breakpoint ('tablet') {
+    overflow: hidden;
+  }
+
+  .modal{
+    max-width: rem(1200);
+
+    &-header{
+      margin-top: rem(32);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: rem(16);
+    }
+
+    &-img{
+      max-width: rem(256);
+    }
+  }
 
   h2 {
     font-size: 24px;
@@ -43,4 +66,10 @@
     border-radius: 4px;
     cursor: pointer;
   }
+}
+
+
+.modal-open {
+  overflow: hidden;
+
 }

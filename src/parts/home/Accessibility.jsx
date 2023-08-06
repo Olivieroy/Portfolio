@@ -59,7 +59,7 @@ const Accessibility = () => {
             </p>
           </li>
           <li>
-                      <Button Text="Prêt à rendre votre site accessible ? Contactez-moi !" Link='' Color="primary" Type="outlined"
+                      <Button Text="Prêt à rendre votre site accessible ? Contactez-moi !" Link='#Contact' Color="primary" Type="outlined"
                       ></Button>
           </li>
         </ul>
